@@ -87,56 +87,98 @@
 	{% load static %}
 
 	<section id="portfoliospace">
-		<div class="container">    
-			<div class="row text-center">  
-				<br>
-				<br>
+		<div class="container">
+			<div class="row text-center">
 				<h2>NUESTROS GUSTOS</h2>
-				<br>
-				<br>
 				<h3><span style="color: #f58220;">CREMAS</span></h3>
-				<br>
-				
-				<div class="col-sm-12 col-lg-12 col-md-12 col-xs-12">
-					{% for helado in gustos %}
-					{% if helado.categoria == 'crema' %}
+				<div class="row">
+					{% for helado in cremas %}
+				<!--CREMAS-->
 					<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
 						<img src="{{ helado.imagen }}" alt="locales" width="204px" />
 						<h3>{{ helado.nombre }}</h3>
 						<p>{{ helado.descripcion }}</p>
-					</div>    
+					</div>  
+					{% if forloop.counter|divisibleby:4 %}
+						</div><div class="row"> 
 					{% endif %}
 					{% endfor %}
 				</div>
+				{% if cremas_frutales %}
+					<!--CREMAS FRUTALES-->
+					<h3><span style="color: #f58220;">CREMAS FRUTALES</span></h3>
+						<div class="row">
+						{% for helado in cremas_frutales %}
+							<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
+								<img src="{{ helado.imagen }}" alt="locales" width="204px" />
+								<h3>{{ helado.nombre }}</h3>
+								<p>{{ helado.descripcion }}<br><br></p>
+							</div>  
+							{% if forloop.counter|divisibleby:4 %}
+								</div><div class="row">
+							{% endif %}
+						{% endfor %}
+						</div> 
+				{% endif %}
 
+				<!--CHOCOLATE-->
+				{% if chocolate %}
+				<h3><span style="color: #f58220;">CHOCOLATE</span></h3>
+				<div class="row">
+					{% for helado in chocolate %}
 
-
-
-				
-				<h3><span style="color: #f58220;">CREMAS FRUTALES</span></h3>
-				<br>
-				
-				<div class="col-sm-12 col-lg-12 col-md-12 col-xs-12">
-					{% for helado in gustos %}
-					{% if helado.categoria == 'frutal' %}
 					<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
 						<img src="{{ helado.imagen }}" alt="locales" width="204px" />
 						<h3>{{ helado.nombre }}</h3>
 						<p>{{ helado.descripcion }}<br><br></p>
-					</div>    
+					</div>  
+					{% if forloop.counter|divisibleby:4 %}
+						</div><div class="row">
 					{% endif %}
-					{% endfor %}		
-				</div>
+					{% endfor %}
+				</div> 
+				{% endif %}
 
-			</div>  
+				<!--DULCE DE LECHE-->
+				{% if dulce_de_leche %}
+				<h3><span style="color: #f58220;">DULCE DE LECHE</span></h3>
+				<div class="row">
+					{% for helado in dulce_de_leche %}
+
+					<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
+						<img src="{{ helado.imagen }}" alt="locales" width="204px" />
+						<h3>{{ helado.nombre }}</h3>
+						<p>{{ helado.descripcion }}<br><br></p>
+					</div>  
+					{% if forloop.counter|divisibleby:4 %}
+						</div><div class="row"> 
+
+					{% endif %}
+					{% endfor %}
+				</div> 
+				{% endif %}
+
+				<!--FRUTALES-->
+				{% if frutales %}
+				<h3><span style="color: #f58220;">FRUTALES</span></h3>
+				<div class="row">
+					{% for helado in frutales %}
+
+					<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
+						<img src="{{ helado.imagen }}" alt="locales" width="204px" />
+						<h3>{{ helado.nombre }}</h3>
+						<p>{{ helado.descripcion }}<br><br></p>
+					</div>  
+					{% if forloop.counter|divisibleby:4 %}
+						</div><div class="row"> 
+
+					{% endif %}
+					{% endfor %}
+				</div> 
+				{% endif %}
 
 
-
-
-
-
-
-			
+			</div>
 			<div class="col-md-12 col-sm-12 col-lg-12 text-center">
 				<br>
 				<br>
@@ -146,7 +188,7 @@
 				<br>
 				<br>
 			</div>
-		</div>  
+		</div>
 	</section> <!--/#portfolio-->
 	
 	
