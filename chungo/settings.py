@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-u!r-tfi613hodx%k&p@!!_v6z7371nmjz0)8(+s6w$@wusx7dm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://app-chungo.onrender.com',
+                 'http://app-chungo.onrender.com'
+                 ]
 
 
 # Application definition
