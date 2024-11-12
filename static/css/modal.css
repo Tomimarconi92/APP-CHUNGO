@@ -1,0 +1,81 @@
+.modalx {
+	
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    display: none;
+    overflow: auto;
+   
+	
+	
+	top: 0;
+	left: 0;
+	
+	display: flex;
+	
+	animation: modal 2s 3s forwards;	
+	visibility: hidden;
+	opacity: 0;
+	background-color: rgba(99, 99, 99, 0.63);
+	
+}
+
+.contenido{
+	margin: auto;
+	width:;
+	height:;
+	
+}
+	
+#cerrar {
+	display: none;	
+	
+}
+
+
+#cerrar + label {
+	
+	color: #02284f;
+	font-size: 25px;
+	z-index: 50;
+	line-height: 40px;
+	border-radius: 50%;
+	right: 10px;
+	cursor: pointer;
+	
+	display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+	animation: modal 2s 3s forwards;
+	visibility: hidden;
+	opacity: 0;	
+	
+}
+
+#cerrar:checked + label, #cerrar:checked  ~ .modalx {
+	display: none;
+	
+}
+
+@keyframes modal{
+	100%{
+		visibility: visible;
+		opacity:1;
+		
+	}
+	
+}
