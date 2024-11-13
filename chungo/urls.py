@@ -6,7 +6,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.helados_view, name='helados'),  # Esto mapea la vista helados_view al path raíz
-    path('admin', admin.site.urls),
+    path('admin/', admin.site.urls),
 ]
 
 
