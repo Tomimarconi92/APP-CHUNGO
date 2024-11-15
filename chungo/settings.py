@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
 
     #####mis app
     'core',
@@ -56,6 +57,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # Añadir al inicio de la lista
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'chungo.urls'
@@ -140,5 +143,6 @@ MEDIA_URL = ''
 MEDIA_ROOT = os.path.join(BASE_DIR, 'gustos')
 
 CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1",  # El dominio desde el cual se está cargando el iframe
+    "http://127.0.0.1:5500",  # El dominio desde donde se está cargando el iframe
+    "http://127.0.0.1:8000",  # El dominio del servidor Django
 ]
