@@ -138,3 +138,7 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = ''
 MEDIA_ROOT = os.path.join(BASE_DIR, 'gustos')
+
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1",  # El dominio desde el cual se está cargando el iframe
+]
