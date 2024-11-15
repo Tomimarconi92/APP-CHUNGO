@@ -146,3 +146,4 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",  # El dominio desde donde se está cargando el iframe
     "http://127.0.0.1:8000",  # El dominio del servidor Django
 ]
+X_FRAME_OPTIONS = 'ALLOWALL'
