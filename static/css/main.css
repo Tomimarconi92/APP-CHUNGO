@@ -781,8 +781,8 @@ h1, h2, h3, h4, h5, h6 {
         background-size: cover;
   	color: #fff;
      background-color: #040404;
-	background-image: url("../images/fondospace.jpg");
-   
+	background-image: url("../images/fondospace2.jpg");
+	background-attachment: fixed;
 }
 
 #portfolio p, 
@@ -1659,3 +1659,5 @@ h1, h2, h3, h4, h5, h6 {
 	color: #fff;
 	background-image: url(../images/fondo-cv.jpg);
 }
+
+
