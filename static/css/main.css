@@ -778,11 +778,12 @@ h1, h2, h3, h4, h5, h6 {
 	background-position: 50% 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-        background-size: cover;
+    background-size: contain;
   	color: #fff;
      background-color: #040404;
 	background-image: url("../images/fondospace2.jpg");
 	background-attachment: fixed;
+	
 }
 
 #portfolio p, 
