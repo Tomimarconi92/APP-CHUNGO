@@ -2,207 +2,220 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chungo es la primera empresa de elaboración artesanal de helados de la República Argentina que posee las siguientes normas de certificación: ISO 9001-2008. ISO 22000-2005. HACCP.">
-    <meta name="keywords" content="Más de 45 años en la elaboración de helado artesanal. Helado artesanal.">
-    <meta name="author" content="hamiton">
-    <title>CHUNGO.</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Chungo es la primera empresa de elaboración artesanal de helados de la República Argentina que posee las siguientes normas de certificación: ISO 9001-2008. ISO 22000-2005. HACCP.">
+	<meta name="keywords" content="Más de 45 años en la elaboración de helado artesanal. Helado artesanal.">
+	<meta name="author" content="hamiton">
+	<title>CHUNGO.</title>
 
-    <!-- Estilos CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
-    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
-    <link href="{% static 'css/main.css' %}" rel="stylesheet">
-    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+	<!-- Estilos CSS -->
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+	<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+	<link href="{% static 'css/main.css' %}" rel="stylesheet">
+	<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
 
-    <!-- Favicon e íconos de Apple -->
-    <link rel="shortcut icon" href="{% static 'images/ico/favicon-chungo.png' %}">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'images/ico/apple-touch-icon-144-chungo.png' %}">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'images/ico/apple-touch-icon-114-chungo.png' %}">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'images/ico/apple-touch-icon-72-chungo.png' %}">
-    <link rel="apple-touch-icon-precomposed" href="{% static 'images/ico/apple-touch-icon-57-chungo.png' %}">
+	<!-- Favicon e íconos de Apple -->
+	<link rel="shortcut icon" href="{% static 'images/ico/favicon-chungo.png' %}">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144"
+		href="{% static 'images/ico/apple-touch-icon-144-chungo.png' %}">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114"
+		href="{% static 'images/ico/apple-touch-icon-114-chungo.png' %}">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72"
+		href="{% static 'images/ico/apple-touch-icon-72-chungo.png' %}">
+	<link rel="apple-touch-icon-precomposed" href="{% static 'images/ico/apple-touch-icon-57-chungo.png' %}">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1SZ2WQC14N"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-1SZ2WQC14N');
-    </script>
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-1SZ2WQC14N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-1SZ2WQC14N');
+	</script>
 
 </head>
 
-	
 
 
-	
-	
-	{% load static %}
+{% load static %}
 
-	<section id="portfoliospace">
-		<div class="container">
-			<div class="row text-center">
-				<h2>NUESTROS GsdasdsadsadasasdS</h2>
-				<h3><span style="color: #f58220;">CREMAS</span></h3>
-				<div class="row">
-					{% for helado in cremas %}
-				<!--CREMAS-->
-					<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
-						<img src="{{ helado.imagen }}" alt="locales" width="204px" />
-						<h3>{{ helado.nombre }}</h3>
-						<p>{{ helado.descripcion }}</p>
-					</div>  
-					{% if forloop.counter|divisibleby:4 %}
-						</div><div class="row"> 
-					{% endif %}
-					{% endfor %}
-				</div>
-				{% if cremas_frutales %}
-					<!--CREMAS FRUTALES-->
-					<h3><span style="color: #f58220;">CREMAS FRUTALES</span></h3>
-						<div class="row">
-						{% for helado in cremas_frutales %}
-							<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
-								<img src="{{ helado.imagen }}" alt="locales" width="204px" />
-								<h3>{{ helado.nombre }}</h3>
-								<p>{{ helado.descripcion }}<br><br></p>
-							</div>  
-							{% if forloop.counter|divisibleby:4 %}
-								</div><div class="row">
-							{% endif %}
-						{% endfor %}
-						</div> 
-				{% endif %}
-
-				<!--CHOCOLATE-->
-				{% if chocolate %}
-				<h3><span style="color: #f58220;">CHOCOLATE</span></h3>
-				<div class="row">
-					{% for helado in chocolate %}
-
-					<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
-						<img src="{{ helado.imagen }}" alt="locales" width="204px" />
-						<h3>{{ helado.nombre }}</h3>
-						<p>{{ helado.descripcion }}<br><br></p>
-					</div>  
-					{% if forloop.counter|divisibleby:4 %}
-						</div><div class="row">
-					{% endif %}
-					{% endfor %}
-				</div> 
-				{% endif %}
-
-				<!--DULCE DE LECHE-->
-				{% if dulce_de_leche %}
-				<h3><span style="color: #f58220;">DULCE DE LECHE</span></h3>
-				<div class="row">
-					{% for helado in dulce_de_leche %}
-
-					<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
-						<img src="{{ helado.imagen }}" alt="locales" width="204px" />
-						<h3>{{ helado.nombre }}</h3>
-						<p>{{ helado.descripcion }}<br><br></p>
-					</div>  
-					{% if forloop.counter|divisibleby:4 %}
-						</div><div class="row"> 
-
-					{% endif %}
-					{% endfor %}
-				</div> 
-				{% endif %}
-
-				<!--FRUTALES-->
-				{% if frutales %}
-				<h3><span style="color: #f58220;">FRUTALES</span></h3>
-				<div class="row">
-					{% for helado in frutales %}
-
-					<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
-						<img src="{{ helado.imagen }}" alt="locales" width="204px" />
-						<h3>{{ helado.nombre }}</h3>
-						<p>{{ helado.descripcion }}<br><br></p>
-					</div>  
-					{% if forloop.counter|divisibleby:4 %}
-						</div><div class="row"> 
-
-					{% endif %}
-					{% endfor %}
-				</div> 
-				{% endif %}
-
-
-			</div>
-			<div class="col-md-12 col-sm-12 col-lg-12 text-center">
-				<br>
-				<br>
-				<a href="https://linktr.ee/Chungo" target="_blank">
-					<button type="button" class="btn btn-warning">PEDIDOS ONLINE</button>
-				</a>
-				<br>
-				<br>
-			</div>
-		</div>
-	</section> <!--/#portfolio-->
-	
-	
-	
-	
-	<section id="contact2"> 
-		<div class="container"> 	
+<section id="portfoliospace">
+	<div class="container">
+		<div class="row text-center">
+			<h2>NUESTROS GsdasdsadsadasasdS</h2>
+			<h3><span style="color: #f58220;">CREMAS</span></h3>
 			<div class="row">
-				<div class="col-sm-3 col-md-3 col-lg-3">
-				<p>SEGUINOS            
-				<br>CONTACTO
-				<br>DEFENSA AL CONSUMIDOR</p>	
-					<div class="social-icons">
-						<a href="https://www.facebook.com/heladoschungo/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-						<a href="https://www.instagram.com/heladoschungo/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-						<a href="https://twitter.com/HeladosChungo" target="_blanck"><i class="fa fa-twitter"></i></a>
+				{% for helado in cremas %}
+				<!--CREMAS-->
+				<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
+					<img src="{{ helado.imagen }}" alt="locales" width="204px" />
+					<h3>{{ helado.nombre }}</h3>
+					<p>{{ helado.descripcion }}</p>
+				</div>
+				{% if forloop.counter|divisibleby:4 %}
+			</div>
+			<div class="row">
+				{% endif %}
+				{% endfor %}
+			</div>
+			{% if cremas_frutales %}
+			<!--CREMAS FRUTALES-->
+			<h3><span style="color: #f58220;">CREMAS FRUTALES</span></h3>
+			<div class="row">
+				{% for helado in cremas_frutales %}
+				<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
+					<img src="{{ helado.imagen }}" alt="locales" width="204px" />
+					<h3>{{ helado.nombre }}</h3>
+					<p>{{ helado.descripcion }}<br><br></p>
+				</div>
+				{% if forloop.counter|divisibleby:4 %}
+			</div>
+			<div class="row">
+				{% endif %}
+				{% endfor %}
+			</div>
+			{% endif %}
 
-						</div>
-			</div>	
-			
+			<!--CHOCOLATE-->
+			{% if chocolate %}
+			<h3><span style="color: #f58220;">CHOCOLATE</span></h3>
+			<div class="row">
+				{% for helado in chocolate %}
+
+				<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
+					<img src="{{ helado.imagen }}" alt="locales" width="204px" />
+					<h3>{{ helado.nombre }}</h3>
+					<p>{{ helado.descripcion }}<br><br></p>
+				</div>
+				{% if forloop.counter|divisibleby:4 %}
+			</div>
+			<div class="row">
+				{% endif %}
+				{% endfor %}
+			</div>
+			{% endif %}
+
+			<!--DULCE DE LECHE-->
+			{% if dulce_de_leche %}
+			<h3><span style="color: #f58220;">DULCE DE LECHE</span></h3>
+			<div class="row">
+				{% for helado in dulce_de_leche %}
+
+				<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
+					<img src="{{ helado.imagen }}" alt="locales" width="204px" />
+					<h3>{{ helado.nombre }}</h3>
+					<p>{{ helado.descripcion }}<br><br></p>
+				</div>
+				{% if forloop.counter|divisibleby:4 %}
+			</div>
+			<div class="row">
+
+				{% endif %}
+				{% endfor %}
+			</div>
+			{% endif %}
+
+			<!--FRUTALES-->
+			{% if frutales %}
+			<h3><span style="color: #f58220;">FRUTALES</span></h3>
+			<div class="row">
+				{% for helado in frutales %}
+
+				<div class="col-sm-3 col-lg-3 col-md-3 col-xs-12">
+					<img src="{{ helado.imagen }}" alt="locales" width="204px" />
+					<h3>{{ helado.nombre }}</h3>
+					<p>{{ helado.descripcion }}<br><br></p>
+				</div>
+				{% if forloop.counter|divisibleby:4 %}
+			</div>
+			<div class="row">
+
+				{% endif %}
+				{% endfor %}
+			</div>
+			{% endif %}
+
+
+		</div>
+		<div class="col-md-12 col-sm-12 col-lg-12 text-center">
+			<br>
+			<br>
+			<a href="https://linktr.ee/Chungo" target="_blank">
+				<button type="button" class="btn btn-warning">PEDIDOS ONLINE</button>
+			</a>
+			<br>
+			<br>
+		</div>
+	</div>
+</section> <!--/#portfolio-->
+
+
+
+
+<section id="contact2">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3 col-md-3 col-lg-3">
+				<p>SEGUINOS
+					<br>CONTACTO
+					<br>DEFENSA AL CONSUMIDOR
+				</p>
+				<div class="social-icons">
+					<a href="https://www.facebook.com/heladoschungo/" target="_blank"><i class="fa fa-facebook"
+							aria-hidden="true"></i></a>
+					<a href="https://www.instagram.com/heladoschungo/" target="_blank"><i class="fa fa-instagram"
+							aria-hidden="true"></i></a>
+					<a href="https://twitter.com/HeladosChungo" target="_blanck"><i class="fa fa-twitter"></i></a>
+
+				</div>
+			</div>
+
 			<div class="col-sm-3 col-md-3 col-lg-3">
 				<h5>RRHH</h5>
-				<p>Si estás interesado/a en desarrollarte en una compañía en plena expansión priorizando el trabajo en equipo y la excelencia en el servicio postúlate enviando tu cv a <a href="mailto:rrhh@chungo.com.ar" target="_blank">rrhh@chungo.com.ar</a></p>
+				<p>Si estás interesado/a en desarrollarte en una compañía en plena expansión priorizando el trabajo en
+					equipo y la excelencia en el servicio postúlate enviando tu cv a <a href="mailto:rrhh@chungo.com.ar"
+						target="_blank">rrhh@chungo.com.ar</a></p>
 			</div>
-			
+
 			<div class="col-sm-3 col-md-3 col-lg-3 text-left">
 				<img src="images/img-logos.png" alt="nosotros" width="400px" />
-			</div>	
-            <div class="col-sm-3 col-md-3 col-lg-3 text-right">
-                <a href="http://qr.afip.gob.ar/?qr=7_mUF6-Y3NLQnra6hvqR7w,," target="_F960AFIPInfo"><img src=http://www.afip.gob.ar/images/f960/DATAWEB.jpg  width="50px"></a>
-            </div>    
-                
-                
 			</div>
-		</div>
-	</section>	
-						
-	<footer id="footer"> 
-		<div class="container"> 
-			<div class="text-center"> 
-				<p>Copyright &copy; 2021 - <a href="https://hamilton-group.com/">Hamilton-group</a></p> 
-			</div> 
-		</div> 
-	</footer> <!--/#footer--> 
-	
-	<!-- Modal  -->
+			<div class="col-sm-3 col-md-3 col-lg-3 text-right">
+				<a href="http://qr.afip.gob.ar/?qr=7_mUF6-Y3NLQnra6hvqR7w,," target="_F960AFIPInfo"><img
+						src=http://www.afip.gob.ar/images/f960/DATAWEB.jpg width="50px"></a>
+			</div>
 
-	<script type="text/javascript" src="js/jquery.js"></script> 
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/smoothscroll.js"></script> 
-	<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
-	<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script> 
-	<script type="text/javascript" src="js/jquery.parallax.js"></script> 
-	<script type="text/javascript" src="js/main.js"></script> 
-	
+
+		</div>
+	</div>
+</section>
+
+<footer id="footer">
+	<div class="container">
+		<div class="text-center">
+			<p>Copyright &copy; 2021 - <a href="https://hamilton-group.com/">Hamilton-group</a></p>
+		</div>
+	</div>
+</footer> <!--/#footer-->
+
+<!-- Modal  -->
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/smoothscroll.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="js/jquery.parallax.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
 
 
 </html>
